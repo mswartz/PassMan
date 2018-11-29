@@ -13,6 +13,12 @@ import java.util.Properties;
 public class UI {
     TextIO textIO = TextIoFactory.getTextIO();
     TextTerminal terminal = textIO.getTextTerminal();
+    BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
+    Properties properties = new Properties();
+    String encryptedPassword;
+
+    private boolean sessionStarted = false;
+    private boolean userFound = false;
 
     public static enum OPTIONS {
         LOGIN, NEWUSER
@@ -32,105 +38,89 @@ public class UI {
     }
 
     public void mainMenu(Session activeSession){
-        String menuChoice = textIO.newStringInputReader()
-                .withNumberedPossibleValues("Login", "Create user")
-                .read("Login");
+        do {
+            String menuChoice = textIO.newStringInputReader()
+                    .withNumberedPossibleValues("Login", "Create user")
+                    .read("Login");
 
-        switch (menuChoice) {
-            case "Login":
-                String userName = textIO.newStringInputReader()
-                        .read("Username");
-                String passWord = textIO.newStringInputReader()
-                        .withInputMasking(true)
-                        .read("Password");
+            switch (menuChoice) {
+                case "Login":
+                    String userName = textIO.newStringInputReader()
+                            .read("Username");
 
 //                if( activeSession.logUserIn(userName, passWord) ){
 //                    this.appMenu(activeSession);
 //                }
 
-                //load properties file for user
-                try {
-                    File file = new File(userName+".properties");
-                    FileInputStream fileInput = new FileInputStream(file);
-                    Properties properties = new Properties();
-                    properties.load(fileInput);
-                    fileInput.close();
+                    //load properties file for user
+                    try {
+                        File file = new File(userName + ".properties");
+                        FileInputStream fileInput = new FileInputStream(file);
+                        properties.load(fileInput);
+                        fileInput.close();
 
-                    Enumeration enuKeys = properties.keys();
-                    while (enuKeys.hasMoreElements()) {
-                        String key = (String) enuKeys.nextElement();
-                        String value = properties.getProperty(key);
-                        terminal.printf(key + ": " + value);
+                        userFound = true;
+
+                        Enumeration enuKeys = properties.keys();
+                        while (enuKeys.hasMoreElements()) {
+                            String key = (String) enuKeys.nextElement();
+                            String value = properties.getProperty(key);
+                            terminal.printf(key + ": " + value);
+                        }
+
+                        encryptedPassword = properties.getProperty("password");
+                    } catch (FileNotFoundException e) {
+                        // if user does not exist, ask them to make a new one.
+                        terminal.printf("No user found, try creating a new user");
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (FileNotFoundException e) {
-                    // if user does not exist, ask them to make a new one.
-                    terminal.printf("No user found, try creating a new user");
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case "Create user":
 
-                StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+                    if(userFound) {
+                        String inputPassword = textIO.newStringInputReader()
+                                .withInputMasking(true)
+                                .read("Password");
+                        if (passwordEncryptor.checkPassword(inputPassword, encryptedPassword)) {
+                            terminal.printf("correct!");
+                        } else {
+                            terminal.printf("Incorrect password");
+                        }
+                    }
 
-                String newUserName = textIO.newStringInputReader()
-                        .read("Username");
+                    break;
+                case "Create user":
 
-                String newPassWord = textIO.newStringInputReader()
-                        .withInputMasking(true)
-                        .read("Password");
-                encryptor.setPassword(newPassWord);
+                    String newUserName = textIO.newStringInputReader()
+                            .read("Username");
 
-                BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
-                String encryptedPassword = passwordEncryptor.encryptPassword("password");
-                terminal.printf(encryptedPassword);
+                    String newPassWord = textIO.newStringInputReader()
+                            .withInputMasking(true)
+                            .read("Password");
 
-                if (passwordEncryptor.checkPassword(newPassWord, encryptedPassword)) {
-                    terminal.printf("thats correct");
-                } else {
-                    terminal.printf("shit nope");
-                }
+                    String newEncryptedPassword = passwordEncryptor.encryptPassword(newPassWord);
+                    terminal.printf(newEncryptedPassword);
 
-                String encryptedText = encryptor.encrypt(newPassWord);
-                System.out.println("Encrypted text is: " + encryptedText);
-
-                StandardPBEStringEncryptor decryptor = new StandardPBEStringEncryptor();
-
-                try {
-                    File file = new File(newUserName+".properties");
-                    FileInputStream fileInput = new FileInputStream(file);
-                    Properties properties = new Properties();
-                    properties.load(fileInput);
-                    fileInput.close();
-
-                    // if user is taken, don't let them make a new one.
-                    terminal.printf("Sorry, that user is already taken.");
-
-                } catch (FileNotFoundException e) {
                     try {
                         Properties properties = new Properties();
-                        properties.setProperty("password", encryptedPassword);
+                        properties.setProperty("password", newEncryptedPassword);
                         properties.setProperty("username", newUserName);
 
-                        File file = new File(newUserName+".properties");
+                        File file = new File(newUserName + ".properties");
                         FileOutputStream fileOut = new FileOutputStream(file);
                         properties.store(fileOut, "Properties File");
                         fileOut.close();
-                    } catch (FileNotFoundException e2) {
-                        e2.printStackTrace();
-                    } catch (IOException e3) {
-                        e3.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
 
-                break;
-                default :
+                    break;
+                default:
                     terminal.printf("No choice made");
                     break;
-        }
+            }
+        } while (!sessionStarted);
     }
 
     public void appMenu(Session activeSession){
