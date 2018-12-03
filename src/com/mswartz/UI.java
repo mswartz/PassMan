@@ -5,6 +5,8 @@ import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.BasicPasswordEncryptor;
+import java.awt.datatransfer.*;
+import java.awt.Toolkit;
 
 import java.io.*;
 import java.util.*;
@@ -163,7 +165,11 @@ public class UI {
         for (Login login : currentSession.getKeychain().getLogins()
         ) {
             if(menuChoice.equals(login.getServiceName())){
-                terminal.print(login.getPassWord());
+                terminal.print("Copied to clipboard");
+                String myString = login.getPassWord();
+                StringSelection stringSelection = new StringSelection(myString);
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(stringSelection, null);
             }
         }
     }
