@@ -1,14 +1,28 @@
 package com.mswartz;
 
 public class Session {
-    User activeUser = new User();
+    public User activeUser = new User();
+    public String sessionStatus;
 
-    public boolean logUserIn(String userName, String passWord) {
-        if(!userName.isEmpty()){
-            return true;
-        } else {
-            return false;
-        }
+    public Session () {}
+
+    public Session(String activeUser){
+        sessionStatus = "active";
     }
 
+    public User getActiveUser() {
+        return activeUser;
+    }
+
+    public void setActiveUser(User activeUser) {
+        this.activeUser = activeUser;
+    }
+
+    public String getSessionStatus() {
+        return sessionStatus;
+    }
+
+    public void setSessionStatus(String sessionStatus) {
+        this.sessionStatus = sessionStatus;
+    }
 }

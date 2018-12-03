@@ -16,6 +16,7 @@ public class UI {
     BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
     Properties properties = new Properties();
     String encryptedPassword;
+    int pwAttempts = 3;
 
     private boolean sessionStarted = false;
     private boolean userFound = false;
@@ -25,7 +26,6 @@ public class UI {
     }
 
     public void greetUser(){
-
         terminal.printf(
                 "  ___  _   ___ ___ __  __   _   _  _ \n" +
                 " | _ \\/_\\ / __/ __|  \\/  | /_\\ | \\| |\n" +
@@ -34,7 +34,6 @@ public class UI {
                 "                                     \n");
 
         terminal.printf("Version 0.1 🔥\n");
-
     }
 
     public void mainMenu(Session activeSession){
@@ -47,10 +46,6 @@ public class UI {
                 case "Login":
                     String userName = textIO.newStringInputReader()
                             .read("Username");
-
-//                if( activeSession.logUserIn(userName, passWord) ){
-//                    this.appMenu(activeSession);
-//                }
 
                     //load properties file for user
                     try {
@@ -65,10 +60,10 @@ public class UI {
                         while (enuKeys.hasMoreElements()) {
                             String key = (String) enuKeys.nextElement();
                             String value = properties.getProperty(key);
-                            terminal.printf(key + ": " + value);
                         }
 
                         encryptedPassword = properties.getProperty("password");
+
                     } catch (FileNotFoundException e) {
                         // if user does not exist, ask them to make a new one.
                         terminal.printf("No user found, try creating a new user");
@@ -81,9 +76,17 @@ public class UI {
                                 .withInputMasking(true)
                                 .read("Password");
                         if (passwordEncryptor.checkPassword(inputPassword, encryptedPassword)) {
-                            terminal.printf("correct!");
+                            terminal.printf("\nLogging in...");
+                            sessionStarted = true;
+                            Session currentSession = new Session(userName);
+                            this.appMenu(currentSession);
                         } else {
-                            terminal.printf("Incorrect password");
+                            if(pwAttempts > 1) {
+                                pwAttempts -= 1;
+                                terminal.printf("Incorrect password." + pwAttempts + " attempts left.");
+                            } else {
+                                System.exit(0);
+                            }
                         }
                     }
 
@@ -123,17 +126,19 @@ public class UI {
         } while (!sessionStarted);
     }
 
-    public void appMenu(Session activeSession){
-        String menuChoice = textIO.newStringInputReader()
-                .withNumberedPossibleValues("Find login", "Add new login")
-                .read();
+    public void appMenu(Session currentSession){
+        while (currentSession.getSessionStatus().equals("active")) {
+            String menuChoice = textIO.newStringInputReader()
+                    .withNumberedPossibleValues("Find login", "Add new login")
+                    .read();
 
-        switch (menuChoice) {
-            case "Find login":
-                terminal.printf("all the passwords");
-                break;
-            case "Add new login":
-                terminal.printf("A new login");
+            switch (menuChoice) {
+                case "Find login":
+                    terminal.printf("all the passwords");
+                    break;
+                case "Add new login":
+                    terminal.printf("A new login");
+            }
         }
     }
 }
