@@ -3,6 +3,7 @@ package com.mswartz;
 public class Session {
     public User activeUser = new User();
     public String sessionStatus;
+    public List keychain = new List();
 
     public Session () {}
 
@@ -24,5 +25,13 @@ public class Session {
 
     public void setSessionStatus(String sessionStatus) {
         this.sessionStatus = sessionStatus;
+    }
+
+    public List getKeychain() {
+        return keychain;
+    }
+
+    public void setKeychain(List keychain) {
+        this.keychain = keychain;
     }
 }

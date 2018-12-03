@@ -7,8 +7,7 @@ import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
 import java.io.*;
-import java.util.Enumeration;
-import java.util.Properties;
+import java.util.*;
 
 public class UI {
     TextIO textIO = TextIoFactory.getTextIO();
@@ -36,7 +35,7 @@ public class UI {
         terminal.printf("Version 0.1 🔥\n");
     }
 
-    public void mainMenu(Session activeSession){
+    public void mainMenu(){
         do {
             String menuChoice = textIO.newStringInputReader()
                     .withNumberedPossibleValues("Login", "Create user")
@@ -127,17 +126,44 @@ public class UI {
     }
 
     public void appMenu(Session currentSession){
+        currentSession.getKeychain().importListFromFile();
+
+
         while (currentSession.getSessionStatus().equals("active")) {
             String menuChoice = textIO.newStringInputReader()
-                    .withNumberedPossibleValues("Find login", "Add new login")
+                    .withNumberedPossibleValues("Find login", "Add new login", "Logout")
                     .read();
 
             switch (menuChoice) {
                 case "Find login":
-                    terminal.printf("all the passwords");
+                    serviceMenu(currentSession);
                     break;
                 case "Add new login":
                     terminal.printf("A new login");
+                case "Logout":
+                    currentSession.setSessionStatus("inactive");
+                    mainMenu();
+            }
+        }
+    }
+
+    public void serviceMenu(Session currentSession) {
+//        Map<String, String> map = new HashMap<String, String>();
+
+//        for (Login login : currentSession.getKeychain().getLogins()
+//        ) {
+//            logins.add(login);
+//        }
+
+
+        String menuChoice = textIO.newStringInputReader()
+                .withNumberedPossibleValues("google", "yahoo")
+                .read();
+
+        for (Login login : currentSession.getKeychain().getLogins()
+        ) {
+            if(menuChoice.equals(login.getServiceName())){
+                terminal.print(login.getPassWord());
             }
         }
     }

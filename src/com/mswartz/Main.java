@@ -8,7 +8,7 @@ public class Main {
         UI userInterface = new UI();
         Session activeSession = new Session();
         userInterface.greetUser();
-        userInterface.mainMenu(activeSession);
+        userInterface.mainMenu();
 
         // Session with user for this service
 

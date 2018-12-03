@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class List {
     public User listOwner;
-    public ArrayList<Login> keyChain;
+    private ArrayList<Login> logins = new ArrayList<Login>();
+
 
     public List(){}
 
@@ -17,6 +18,15 @@ public class List {
     }
 
     public void importListFromFile(){
+        this.logins.add(new Login("google","mswartz","password"));
+        this.logins.add(new Login("yahoo","mswartz","password"));
+    }
 
+    public ArrayList<Login> getLogins() {
+        return logins;
+    }
+
+    public void setLogins(ArrayList<Login> logins) {
+        this.logins = logins;
     }
 }

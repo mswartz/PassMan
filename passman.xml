@@ -168,7 +168,6 @@
   <path id="library.org.beryx:text-io:3.3.0.classpath">
     <pathelement location="${basedir}/lib/awt-color-factory-1.0.0.jar"/>
     <pathelement location="${basedir}/lib/jline-2.14.5.jar"/>
-    <pathelement location="${basedir}/lib/slf4j-api-1.7.25.jar"/>
     <pathelement location="${basedir}/lib/text-io-3.3.0.jar"/>
   </path>
   
@@ -217,11 +216,9 @@
       <zipfileset dir="${passman.output.dir}"/>
       <zipfileset src="${basedir}/lib/jasypt-1.9.2.jar"/>
       <zipfileset src="${basedir}/lib/text-io-3.3.0.jar"/>
-      <zipfileset src="${basedir}/lib/slf4j-api-1.7.25.jar"/>
       <zipfileset src="${basedir}/lib/jline-2.14.5.jar"/>
       <zipfileset src="${basedir}/lib/awt-color-factory-1.0.0.jar"/>
       <zipfileset file="${basedir}/lib/text-io-3.3.0.jar"/>
-      <zipfileset file="${basedir}/lib/slf4j-api-1.7.25.jar"/>
       <zipfileset file="${basedir}/lib/jline-2.14.5.jar"/>
       <zipfileset file="${basedir}/lib/awt-color-factory-1.0.0.jar"/>
       <zipfileset file="${basedir}/lib/jasypt-1.9.2.jar"/>
