@@ -17,14 +17,11 @@ public class UI {
     BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
     Properties properties = new Properties();
     String encryptedPassword;
+    User activeUser = new User();
     int pwAttempts = 3;
 
     private boolean sessionStarted = false;
     private boolean userFound = false;
-
-    public static enum OPTIONS {
-        LOGIN, NEWUSER
-    }
 
     public void greetUser(){
         terminal.printf(
@@ -80,6 +77,9 @@ public class UI {
                             terminal.printf("\nLogging in...");
                             sessionStarted = true;
                             Session currentSession = new Session(userName);
+                            activeUser.setUserName(userName);
+                            currentSession.setActiveUser(activeUser);
+
                             this.appMenu(currentSession);
                         } else {
                             if(pwAttempts > 1) {
@@ -128,8 +128,9 @@ public class UI {
     }
 
     public void appMenu(Session currentSession){
-        currentSession.getKeychain().importListFromFile();
-
+        List activeList = new List();
+        activeList.setLogins(List.importListFromFile(activeUser));
+        currentSession.setKeychain(activeList);
 
         while (currentSession.getSessionStatus().equals("active")) {
             String menuChoice = textIO.newStringInputReader()
@@ -150,14 +151,6 @@ public class UI {
     }
 
     public void serviceMenu(Session currentSession) {
-//        Map<String, String> map = new HashMap<String, String>();
-
-//        for (Login login : currentSession.getKeychain().getLogins()
-//        ) {
-//            logins.add(login);
-//        }
-
-
         String menuChoice = textIO.newStringInputReader()
                 .withNumberedPossibleValues("google", "yahoo")
                 .read();
