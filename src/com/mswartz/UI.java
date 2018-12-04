@@ -5,6 +5,8 @@ import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.BasicPasswordEncryptor;
+import org.jasypt.util.text.BasicTextEncryptor;
+
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
 
@@ -119,6 +121,8 @@ public class UI {
                         e.printStackTrace();
                     }
 
+                    List.writeEmptyFile(newUserName);
+
                     break;
                 default:
                     terminal.printf("No choice made");
@@ -142,7 +146,7 @@ public class UI {
                     serviceMenu(currentSession);
                     break;
                 case "Add new login":
-                    terminal.printf("A new login");
+                    addLoginMenu(currentSession);
                 case "Logout":
                     currentSession.setSessionStatus("inactive");
                     mainMenu();
@@ -165,11 +169,57 @@ public class UI {
         ) {
             if(menuChoice.equals(login.getServiceName())){
                 terminal.print("Copied to clipboard");
-                String myString = login.getPassWord();
+
+                BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+                textEncryptor.setPassword("password");
+                String plainTextPassword = textEncryptor.decrypt(login.getPassWord());
+
+                String myString = plainTextPassword;
                 StringSelection stringSelection = new StringSelection(myString);
                 Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard.setContents(stringSelection, null);
             }
         }
+    }
+
+    public void addLoginMenu(Session currentSession){
+            // build the login here
+            TextIO textIO = TextIoFactory.getTextIO();
+
+            String serviceName = textIO.newStringInputReader()
+                    .read("Service name");
+
+
+            String userName = textIO.newStringInputReader()
+                    .withDefaultValue("admin")
+                    .read("Username");
+
+            String passWord = textIO.newStringInputReader()
+                    .withMinLength(6)
+                    .withInputMasking(true)
+                    .read("Password");
+
+            Login newLogin = new Login();
+
+
+            newLogin.setServiceName(serviceName);
+            newLogin.setUserName(userName);
+
+            BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+            textEncryptor.setPassword("password");
+            String encryptedPassword = textEncryptor.encrypt(passWord);
+
+            newLogin.setPassWord(encryptedPassword);
+
+            ArrayList<Login> loginsToChange = currentSession.getKeychain().getLogins();
+            loginsToChange.add(newLogin);
+            currentSession.getKeychain().setLogins(loginsToChange);
+            currentSession.getKeychain().setListOwner(currentSession.getActiveUser());
+            List.writeListToFile(currentSession.getKeychain());
+
+            TextTerminal terminal = textIO.getTextTerminal();
+            terminal.printf("\nGreat, building a new login for\n"+userName);
+
+            appMenu(currentSession);
     }
 }

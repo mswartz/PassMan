@@ -5,6 +5,7 @@ import org.beryx.textio.TextIoFactory;
 import org.beryx.textio.TextTerminal;
 
 import java.time.Month;
+import java.util.ArrayList;
 
 public class Login {
     private String serviceName;
@@ -21,28 +22,6 @@ public class Login {
 
     public void generatePassword(){
 
-    }
-
-    public void createNewLogin(){
-        // build the login here
-        TextIO textIO = TextIoFactory.getTextIO();
-
-        String serviceName = textIO.newStringInputReader()
-                .read("Service name");
-
-
-        String userName = textIO.newStringInputReader()
-                .withDefaultValue("admin")
-                .read("Username");
-
-        String passWord = textIO.newStringInputReader()
-                .withMinLength(6)
-                .withInputMasking(true)
-                .read("Password");
-
-
-        TextTerminal terminal = textIO.getTextTerminal();
-        terminal.printf("\nGreat, building a new login for\n"+userName);
     }
 
     public String getServiceName() {

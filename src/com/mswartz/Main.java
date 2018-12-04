@@ -9,13 +9,6 @@ public class Main {
         Session activeSession = new Session();
         userInterface.greetUser();
         userInterface.mainMenu();
-
-        // Session with user for this service
-
-        // User with stored data and keychain stuff.
-
-        // Menu class to read prompts etc
-
         // Log user out if inactive
     }
 }

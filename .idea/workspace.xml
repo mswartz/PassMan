@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa28b57d-ec65-4458-bab1-50416497480d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/PassMan/com/mswartz/UI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mswartz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mswartz.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mswartz/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mswartz/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mswartz/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mswartz/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mswartz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mswartz/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mswartz/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mswartz/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,24 +25,24 @@
     <session id="-72383964">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="java" value="5502" />
+          <entry key="java" value="6330" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5502" />
+          <entry key="JAVA" value="6330" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="XML" value="5" />
         </counts>
@@ -64,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="221">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -73,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="211">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,22 +89,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+            <state relative-caret-position="364">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#148#155#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
-                <element signature="e#225#226#0" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
                 <element signature="e#1094#1101#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#644#645#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
+                <element signature="e#3409#3410#0" expanded="true" />
+                <element signature="e#3438#3439#0" expanded="true" />
+                <element signature="e#3492#3493#0" expanded="true" />
+                <element signature="e#3528#3529#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,23 +106,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="442">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
                 <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
-                <element signature="e#385#386#0" expanded="true" />
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#461#462#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
-                <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
                 <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,15 +121,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="255">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
                 <element signature="e#153#154#0" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#188#189#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,8 +134,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mswartz/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="160" column="54" selection-start-line="160" selection-start-column="54" selection-end-line="160" selection-end-column="54" />
+            <state relative-caret-position="329">
+              <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,14 +159,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/mswartz/Password.java" />
-        <option value="$PROJECT_DIR$/src/com/mswartz/Login.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/Properties.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/WriteProperties.java" />
         <option value="$PROJECT_DIR$/passman.xml" />
-        <option value="$PROJECT_DIR$/src/com/mswartz/Main.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/User.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/Session.java" />
+        <option value="$PROJECT_DIR$/src/com/mswartz/Main.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/List.java" />
+        <option value="$PROJECT_DIR$/src/com/mswartz/Login.java" />
         <option value="$PROJECT_DIR$/src/com/mswartz/UI.java" />
       </list>
     </option>
@@ -200,9 +183,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="373" />
-    <option name="y" value="86" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="617" />
+    <option name="y" value="299" />
     <option name="width" value="2118" />
     <option name="height" value="1499" />
   </component>
@@ -212,6 +195,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,6 +208,27 @@
               <item name="PassMan" type="b2602c69:ProjectViewProjectNode" />
               <item name="PassMan" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PassMan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PassMan" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="slf4j-api-1.7.25.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="PassMan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PassMan" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="slf4j-api-1.7.25.jar" type="ab9368bb:PsiFileNode" />
+              <item name="slf4j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PassMan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PassMan" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="slf4j-api-1.7.25.jar" type="ab9368bb:PsiFileNode" />
+              <item name="slf4j" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PassMan" type="b2602c69:ProjectViewProjectNode" />
@@ -248,9 +254,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +267,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543890079769" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543890920648" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -311,18 +315,19 @@
       <workItem from="1543197867191" duration="2291000" />
       <workItem from="1543351206577" duration="10717000" />
       <workItem from="1543453612770" duration="4254000" />
-      <workItem from="1543799291433" duration="10522000" />
+      <workItem from="1543799291433" duration="12060000" />
+      <workItem from="1543964013828" duration="2873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27784000" />
+    <option name="totallyTimeSpent" value="32195000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="373" y="86" width="2118" height="1499" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36608863" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37057388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -332,7 +337,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959327" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33191186" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3315508" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,7 +346,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32764748" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3272727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -358,6 +363,26 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/mswartz/List.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/mswartz/List.java</url>
+          <line>78</line>
+          <properties class="com.mswartz.List" method="writeListToFile">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/jasypt-1.9.2.jar!/org/jasypt/encryption/pbe/PBEStringEncryptor.class">
@@ -378,85 +403,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mswartz/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mswartz/User.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mswartz/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="211">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mswartz/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mswartz/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+        <state relative-caret-position="364">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#148#155#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
             <element signature="e#1094#1101#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#3409#3410#0" expanded="true" />
+            <element signature="e#3438#3439#0" expanded="true" />
+            <element signature="e#3492#3493#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mswartz/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mswartz/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="442">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mswartz/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mswartz/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="160" column="54" selection-start-line="160" selection-start-column="54" selection-end-line="160" selection-end-column="54" />
+        <state relative-caret-position="329">
+          <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

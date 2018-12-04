@@ -49,6 +49,9 @@ public class List {
                 //process each line
                 if(scanner.hasNext()){
                     String service = scanner.next();
+                    if (service.equals("Empty")){
+                        break;
+                    }
                     String userName = scanner.next();
                     String password = scanner.next();
 
@@ -85,6 +88,24 @@ public class List {
                 fw.write(login.getPassWord()+" ");
                 fw.write("\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            //close resources
+            try {
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void writeEmptyFile(String userName) {
+        File file = new File(userName+".txt");
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(file);
+            fw.write("Empty\n");
         } catch (IOException e) {
             e.printStackTrace();
         }finally{
