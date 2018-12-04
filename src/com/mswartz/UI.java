@@ -151,8 +151,14 @@ public class UI {
     }
 
     public void serviceMenu(Session currentSession) {
+        String loginNames = "";
+        for(Login login : currentSession.getKeychain().getLogins()
+        ){
+                loginNames += login.getServiceName()+",";
+        }
+
         String menuChoice = textIO.newStringInputReader()
-                .withNumberedPossibleValues("google", "yahoo")
+                .withNumberedPossibleValues(loginNames.split("[,]"))
                 .read();
 
         for (Login login : currentSession.getKeychain().getLogins()
