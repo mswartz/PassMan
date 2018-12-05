@@ -195,16 +195,15 @@ public class UI {
                     .read("Username");
 
             String passWord = textIO.newStringInputReader()
-                    .withDefaultValue("default")
+                    .withDefaultValue("Hit enter to generate a random password")
                     .withInputMasking(true)
                     .read("Password");
 
-            if(passWord.equals("default")){
-                passWord = "testpassword";
+            if(passWord.equals("Hit enter to generate a random password")){
+                passWord = new String(Login.generatePassword(12));
             }
 
             Login newLogin = new Login();
-
 
             newLogin.setServiceName(serviceName);
             newLogin.setUserName(userName);

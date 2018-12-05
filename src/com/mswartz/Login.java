@@ -6,6 +6,7 @@ import org.beryx.textio.TextTerminal;
 
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Login {
     private String serviceName;
@@ -20,8 +21,25 @@ public class Login {
         this.passWord = passWord;
     }
 
-    public void generatePassword(){
+    public static char[] generatePassword(int length){
+            String caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            String lowers = "abcdefghijklmnopqrstuvwxyz";
+            String nums = "0123456789";
+            String symbols = "!@#$%^&*_=+-/.?<>)";
 
+            String values = caps + lowers + nums + symbols;
+
+            // Using random method
+            Random scrambler = new Random();
+
+            char[] password = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                password[i] = values.charAt(scrambler.nextInt(values.length()));
+
+            }
+            return password;
     }
 
     public String getServiceName() {
