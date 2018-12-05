@@ -27,16 +27,6 @@ public class List {
         this.listOwner = listOwner;
     }
 
-//    public ArrayList<Login> importListFromFile(){
-//        this.logins.add(new Login("google","mswartz","password"));
-//        this.logins.add(new Login("yahoo","mswartz","password"));
-//        User testuser = new User();
-//        testuser.setUserName("mswartz");
-//        this.setListOwner(testuser);
-//        List.writeListToFile(this);
-//        return this.getLogins();
-//    }
-
     public static ArrayList<Login> importListFromFile(User activeUser){
         ArrayList<Login> loginsFromFile = new ArrayList<Login>();
 

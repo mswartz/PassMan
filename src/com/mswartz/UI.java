@@ -195,9 +195,13 @@ public class UI {
                     .read("Username");
 
             String passWord = textIO.newStringInputReader()
-                    .withMinLength(6)
+                    .withDefaultValue("default")
                     .withInputMasking(true)
                     .read("Password");
+
+            if(passWord.equals("default")){
+                passWord = "testpassword";
+            }
 
             Login newLogin = new Login();
 
