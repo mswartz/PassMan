@@ -1,7 +1,5 @@
 package com.mswartz;
 
-import java.util.ArrayList;
-
 public class Session {
     public User activeUser = new User();
     public String sessionStatus;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class List {
-    public User listOwner;
+    private User listOwner;
     private ArrayList<Login> logins = new ArrayList<Login>();
 
 

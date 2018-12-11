@@ -1,11 +1,4 @@
 package com.mswartz;
-
-import org.beryx.textio.TextIO;
-import org.beryx.textio.TextIoFactory;
-import org.beryx.textio.TextTerminal;
-
-import java.time.Month;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Login {
@@ -22,24 +15,21 @@ public class Login {
     }
 
     public static char[] generatePassword(int length){
-            String caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            String lowers = "abcdefghijklmnopqrstuvwxyz";
-            String nums = "0123456789";
-            String symbols = "!@#$%^&*_=+-/.?<>)";
+        String lowers = "abcdefghijklmnopqrstuvwxyz";
+        String caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String nums = "0123456789";
+        String symbols = "!@#$%^&*_=+-/.?<>)";
 
-            String values = caps + lowers + nums + symbols;
+        String values = caps + lowers + nums + symbols;
 
-            // Using random method
-            Random scrambler = new Random();
+        Random scrambler = new Random();
 
-            char[] password = new char[length];
+        char[] randomPassword = new char[length];
 
-            for (int i = 0; i < length; i++)
-            {
-                password[i] = values.charAt(scrambler.nextInt(values.length()));
-
-            }
-            return password;
+        for (int i = 0; i < length; i++) {
+            randomPassword[i] = values.charAt(scrambler.nextInt(values.length()));
+        }
+        return randomPassword;
     }
 
     public String getServiceName() {
